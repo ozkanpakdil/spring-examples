@@ -1,0 +1,49 @@
+buildscript {
+    ext { springBootVersion = '2.1.1.RELEASE' }
+    repositories { mavenCentral() }
+    dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
+}
+
+ext { springBootVersion = '2.1.1.RELEASE' }
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+//apply plugin: 'nebula.provided-base'
+
+bootJar {
+    baseName = 'springboot-rest-multi-parameter'
+    version = '0.0.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile "org.projectlombok:lombok:1.18.4"
+    compileOnly "org.projectlombok:lombok:1.18.4"
+    testCompileOnly "org.projectlombok:lombok:1.18.4"
+    annotationProcessor "org.projectlombok:lombok:1.18.4"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.4"
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+task checkRequirements(type: Exec) {
+    description 'This task check gradle version'
+    println 'check'
+    def gradleVersion = project.getGradle().getGradleVersion()
+    if (gradleVersion >= '5.0') {
+        println "Your Gradle version is ${gradleVersion}"
+    } else {
+        println "Gradle version 5.0 min required."
+        exit()
+    }
+}
+wrapper.dependsOn checkRequirements
