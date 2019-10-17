@@ -46,7 +46,7 @@ public class MainController {
         String rendered = Template.parse("{% for i in presentations %}{{ p.title }}-{% endfor %}")
                 // .withProtectionSettings(protectionSettings)
                 .render(model);
-
+                
         log.info(rendered);
         model.put("tt", new Date());
         return "index.liqp";
