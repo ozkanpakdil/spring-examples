@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class Dana {
-    String title;
-    String speakerName;
+    public String title;
+    public String speakerName;
 }
