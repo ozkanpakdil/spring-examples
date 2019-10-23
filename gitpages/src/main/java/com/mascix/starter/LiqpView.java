@@ -1,25 +1,18 @@
 package com.mascix.starter;
 
-import com.mascix.Dana;
-import com.mascix.MainController;
-import liqp.Template;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.ThemeResolver;
-import org.springframework.web.servlet.view.AbstractTemplateView;
+import java.io.File;
+import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+
+import org.springframework.beans.BeansException;
+import org.springframework.web.servlet.view.AbstractTemplateView;
+
+import liqp.Template;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class LiqpView extends AbstractTemplateView {
@@ -29,7 +22,8 @@ public class LiqpView extends AbstractTemplateView {
         if (templateFile.exists()) {
             Template template = Template.parse(templateFile);
             String rendered = template.render(model);
-            log.debug("m:" + model);
+            log.info("m:" + model);
+            log.info("-------------------:" + rendered);
             response.getWriter().write(rendered);
         } else {
             log.info("Not Found:" + getUrl());
