@@ -18,7 +18,8 @@ public class EventListenerExampleBean {
     @EventListener
     public void onApplicationEvent(ContextRefreshedEvent event) {
         log.info(event.toString());
-        // tested if another component called from here. no NPE :)
+        // tested if another component called from here. no NPE :)mvn install
+
         log.info(t.getSomeText());
     }
 }

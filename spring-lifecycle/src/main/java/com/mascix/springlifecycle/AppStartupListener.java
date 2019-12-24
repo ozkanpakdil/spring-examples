@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 @Slf4j
 @Component
 public class AppStartupListener implements ApplicationListener {
@@ -14,4 +16,9 @@ public class AppStartupListener implements ApplicationListener {
     public void onApplicationEvent(ApplicationEvent event) {
         log.info(event.getSource().toString());
     }
+
+    public String justTesting() {
+        return UUID.randomUUID().toString();
+    }
+
 }
