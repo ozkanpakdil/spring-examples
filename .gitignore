@@ -6,3 +6,5 @@ build
 .settings
 .project
 gradle
+.mvn
+mvnw*

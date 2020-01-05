@@ -37,8 +37,6 @@ public class WebSecurityConfig {
 
     private Mono<AuthorizationDecision> whiteListIp(Mono<Authentication> authentication, AuthorizationContext context) {
         String ip = context.getExchange().getRequest().getRemoteAddress().getAddress().toString().replace("/", "");
-//        System.out.println("IP:" + ip);
-//        System.out.println("IP:" + ((whiteListIp.contains(ip)) ? true : false));
         return authentication.map((a) -> new AuthorizationDecision(a.isAuthenticated()))
                 .defaultIfEmpty(new AuthorizationDecision(
                         (whiteListIp.contains(ip)) ? true : false
