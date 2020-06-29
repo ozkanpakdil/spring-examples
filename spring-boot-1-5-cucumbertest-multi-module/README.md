@@ -25,4 +25,4 @@ ContextConfiguration contains 2 classes, result is in the logs
 2020-06-29 09:55:02.594  INFO 22688 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/module1],methods=[GET]}" onto public java.lang.String com.mascix.multimodule1.Controller1.home()
 ```
 
-feature file contains a simple scenario jut to bring up cucumber stuff. no data from there used in the test.
+feature file contains a simple scenario just to bring up cucumber context. no data from there used in the test.
