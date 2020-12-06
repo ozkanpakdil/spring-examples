@@ -21,9 +21,11 @@ public class PortControlFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain fc) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
-        log.info("Logging Request  {} : {} port:{}", req.getMethod(), req.getRequestURI(), req.getLocalPort());
-        fc.doFilter(request, response);
-        log.info("Logging Response :{}", res.getContentType());
+        if (req.getLocalPort() == 8882 && req.getRequestURI().startsWith("/somefunction")) {
+            res.sendError(HttpServletResponse.SC_FORBIDDEN);
+        } else {
+            fc.doFilter(request, response);
+        }
     }
 
 }
