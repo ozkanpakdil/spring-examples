@@ -3,6 +3,7 @@ package com.mascix.multiport;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.catalina.connector.Connector;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,8 @@ public class ListenOnDifferentPortsApplication {
 
     @Value("${server.additionalPorts:null}")
     String additionalPorts;
+
+
 
     public static void main(String[] args) {
         SpringApplication.run(ListenOnDifferentPortsApplication.class, args);
