@@ -10,3 +10,5 @@ gradle
 mvnw*
 *.classpath
 **/.classpath
+**/target/
+**/.factorypath
