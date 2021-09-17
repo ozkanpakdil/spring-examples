@@ -17,7 +17,7 @@ public class RestCallerConfiguration {
         return ServiceInstanceListSupplier
                 .builder()
                 .withRetryAwareness()
-                .withHealthChecks()
+                //.withHealthChecks()
                 .withBase(new RestCaller("restCaller"))
                 .build(ctx)
                 ;
