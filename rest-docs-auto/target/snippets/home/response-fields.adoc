@@ -1,0 +1,8 @@
+|===
+|Path|Type|Description
+
+|`+message+`
+|`+String+`
+|The welcome message for the user.
+
+|===
