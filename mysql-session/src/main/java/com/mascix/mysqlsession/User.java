@@ -1,15 +1,8 @@
 package com.mascix.mysqlsession;
 
-import javax.persistence.ColumnResult;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SqlResultSetMapping;
+import javax.persistence.*;
 
 import lombok.Data;
-import org.hibernate.annotations.NamedNativeQueries;
-import org.hibernate.annotations.NamedNativeQuery;
 
 @SqlResultSetMapping(name="flagResult", columns = { @ColumnResult(name = "@FLAG")})
 
