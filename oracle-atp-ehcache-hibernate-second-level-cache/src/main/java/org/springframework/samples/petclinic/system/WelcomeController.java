@@ -16,15 +16,45 @@
 
 package org.springframework.samples.petclinic.system;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.jcache.JCacheCacheManager;
+import org.springframework.context.ApplicationContext;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import javax.management.MBeanServer;
+import javax.management.ObjectName;
+import java.lang.management.ManagementFactory;
 
 @Controller
 class WelcomeController {
 
+	@Autowired
+	private ApplicationContext context;
+
+	@Autowired
+	JCacheCacheManager cacheManager;
+
 	@GetMapping("/")
 	public String welcome() {
 		return "welcome";
+	}
+
+	@GetMapping(path = "/getCacheStats", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Object getCacheStats() {
+		String[] bean = context.getBeanDefinitionNames();
+		return ResponseEntity.ok(bean);
+	}
+
+	@GetMapping(path = "/getCacheStats2", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Object getCacheStats2() throws Exception {
+		ObjectName objectName = new ObjectName("javax.cache:type=CacheStatistics,CacheManager=urn.X-ehcache.jsr107-default-config,Cache=vets");
+		MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+		Object objectInstance = mbs.getAttributes(objectName,new String[]{"CacheGets","CacheHits","CacheMisses","CachePuts"});
+
+		return ResponseEntity.ok(objectInstance);
 	}
 
 }

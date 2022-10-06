@@ -54,7 +54,7 @@ public interface VetRepository extends Repository<Vet, Integer> {
 	 * @throws DataAccessException
 	 */
 	@Transactional(readOnly = true)
-	@QueryHints(@QueryHint(name = org.hibernate.annotations.QueryHints.CACHEABLE, value = "true"))
+	@Cacheable("vets")
 	Page<Vet> findAll(Pageable pageable) throws DataAccessException;
 
 }

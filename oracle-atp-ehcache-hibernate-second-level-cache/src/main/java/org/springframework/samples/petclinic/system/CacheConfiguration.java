@@ -22,6 +22,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.cache.configuration.MutableConfiguration;
+import javax.cache.expiry.CreatedExpiryPolicy;
+import javax.cache.expiry.Duration;
 
 /**
  * Cache configuration intended for caches providing the JCache API. This configuration
@@ -34,7 +36,15 @@ class CacheConfiguration {
 
 	@Bean
 	public JCacheManagerCustomizer petclinicCacheConfigurationCustomizer() {
-		return cm -> cm.createCache("vets", cacheConfiguration());
+		return cm -> {
+			MutableConfiguration<Object, Object> configuration = new MutableConfiguration<>()
+				.setExpiryPolicyFactory(CreatedExpiryPolicy
+					.factoryOf(Duration.ONE_HOUR))
+				.setStoreByValue(false)
+				.setStatisticsEnabled(true);
+			cm.createCache("vets", configuration);
+			cm.createCache("owners", configuration);
+		};
 	}
 
 	/**

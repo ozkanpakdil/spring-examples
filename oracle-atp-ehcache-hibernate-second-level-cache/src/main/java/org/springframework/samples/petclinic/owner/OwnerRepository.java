@@ -17,6 +17,7 @@ package org.springframework.samples.petclinic.owner;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
@@ -81,7 +82,9 @@ public interface OwnerRepository extends Repository<Owner, Integer> {
 	 **/
 	@Query("SELECT owner FROM Owner owner")
 	@Transactional(readOnly = true)
-	@QueryHints(@QueryHint(name = org.hibernate.annotations.QueryHints.CACHEABLE, value = "true"))
+	// NOTE: second level hibernate cache can not handle Pageable parameters, thats why Cachable used and worked here.
+//	@QueryHints(@QueryHint(name = org.hibernate.annotations.QueryHints.CACHEABLE, value = "true"))
+	@Cacheable("owners")
 	Page<Owner> findAll(Pageable pageable);
 
 }
