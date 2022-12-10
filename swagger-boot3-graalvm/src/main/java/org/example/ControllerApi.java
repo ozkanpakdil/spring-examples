@@ -18,7 +18,9 @@ public class ControllerApi {
     }
 
     @GetMapping("/get1")
-    LoginParams get1(@RequestParam String login, @RequestParam String webMan, @RequestParam String server, @RequestParam String pass, @RequestParam String build) {
+    LoginParams get1(@RequestParam String login, @RequestParam(required = false) String webMan,
+                     @RequestParam(required = false) String server, @RequestParam(required = false) String pass,
+                     @RequestParam(required = false) String build) {
         return LoginParams.builder()
                 .webManager(webMan)
                 .server(server)
