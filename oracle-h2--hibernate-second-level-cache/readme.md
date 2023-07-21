@@ -1,3 +1,12 @@
+# how to run
+- start docker
+- run org.springframework.samples.petclinic.PetClinicApplication from intellij or mvn spring-boot:run
+```shell
+2023-07-20 11:01:11.056  INFO 10428 --- [nio-8080-exec-3] org.hibernate.SQL_SLOW                   : SlowQuery: 25 milliseconds. SQL: 'HikariProxyPreparedStatement@1810783215 wrapping oracle.jdbc.driver.OraclePreparedStatementWrapper@3d348bcf'
+SlowQuery: 25 milliseconds. SQL: 'HikariProxyPreparedStatement@1810783215 wrapping oracle.jdbc.driver.OraclePreparedStatementWrapper@3d348bcf'
+```
+in hibernate 6.3 that log should show the real SQL
+
 # Spring PetClinic Sample Application [![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/spring-projects/spring-petclinic)
