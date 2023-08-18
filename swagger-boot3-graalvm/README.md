@@ -7,6 +7,7 @@ mvn -Pnative native:compile
 ```bash
 ./target/demo
 ```
+too see in local http://localhost:8080/swagger-ui
 
 # compile
 
