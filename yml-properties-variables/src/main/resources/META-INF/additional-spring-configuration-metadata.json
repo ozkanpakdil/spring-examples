@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "provider.${service.id}",
+      "type": "java.lang.String",
+      "description": "Description for provider.${service.id}."
+  }
+] }

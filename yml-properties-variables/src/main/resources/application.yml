@@ -1,0 +1,5 @@
+service:
+  id: "status-service"
+
+provider:
+  "#{${service.id}}": "Running"
