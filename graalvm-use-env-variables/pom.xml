@@ -39,10 +39,6 @@
             <plugin>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>native-maven-plugin</artifactId>
-                <configuration>
-                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>
-                    <mainClass>com.example.demo.DemoApplication</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package io.github.ozkanpakdil.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

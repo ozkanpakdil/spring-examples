@@ -1,6 +1,6 @@
-package com.example.demo.controllers;
+package io.github.ozkanpakdil.controllers;
 
-import com.example.demo.config.AppConfig;
+import io.github.ozkanpakdil.config.AppConfig;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
