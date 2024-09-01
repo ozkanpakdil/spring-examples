@@ -6,8 +6,6 @@ build
 .settings
 .project
 gradle
-.mvn
-mvnw*
 *.classpath
 **/.classpath
 **/target/
