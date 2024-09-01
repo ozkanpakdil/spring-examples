@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
-    @Value("${app,env.value}")
+    @Value("${app.env.value}")
     private String envValue;
 
     public String getEnvValue() {
