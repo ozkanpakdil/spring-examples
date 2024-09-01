@@ -299,3 +299,4 @@ $ ./target/demo.exe
 2024-09-01T11:06:06.149+01:00  INFO 19736 --- [demo] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
 ```
 
+answer : https://stackoverflow.com/questions/77503386/migrating-springboot-3-app-to-graalvm-and-providing-properties-at-runtime
