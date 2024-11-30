@@ -7,7 +7,6 @@ plugins {
 }
 
 description = "OpenTelemetry Example for Spring native images"
-//val moduleName by extra { "io.opentelemetry.examples.native" }
 
 java {
     toolchain {
@@ -29,5 +28,6 @@ dependencies {
     implementation("io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter")
     implementation("io.opentelemetry.contrib:opentelemetry-samplers:1.39.0-alpha")
     implementation("io.opentelemetry.instrumentation:opentelemetry-logback-mdc-1.0:2.8.0-alpha")
+    implementation("net.logstash.logback:logstash-logback-encoder:8.0")
 }
 
