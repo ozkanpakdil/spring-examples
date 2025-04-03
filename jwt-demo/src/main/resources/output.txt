@@ -1,0 +1,311 @@
+Зарегистрируем пользователя
+Сохраним логин пользователя
+Залогиним админа
+Сохраним логин админа
+-----------ТЕСТИРОВАНИЕ НОВОСТЕЙ-----------
+Создадим новость
+{
+  "id": 2,
+  "text": "Моя первая новость",
+  "photoPaths": []
+}
+
+Просмотрим новости
+[
+  {
+    "id": 1,
+    "text": "Тестовая новость",
+    "photoPaths": []
+  },
+  {
+    "id": 2,
+    "text": "Моя первая новость",
+    "photoPaths": []
+  }
+]
+
+Отредактируем новость
+Просмотрим новость
+{
+  "id": 2,
+  "text": "Моя отредактированная первая новость",
+  "photoPaths": []
+}
+
+Добавим картинку к новости
+Просмотрим новость
+{
+  "id": 2,
+  "text": "Моя отредактированная первая новость",
+  "photoPaths": [
+    "DvnsDy.jpg"
+  ]
+}
+
+Удалим новость
+Просмотрим все новости
+[
+  {
+    "id": 1,
+    "text": "Тестовая новость",
+    "photoPaths": []
+  }
+]
+
+-----------ТЕСТИРОВАНИЕ ПОДПИСОК-----------
+Посмотрим список доступных подписок
+[
+  {
+    "name": "Music",
+    "description": "Подписка на музыку",
+    "price": 250
+  },
+  {
+    "name": "Dating",
+    "description": "Подписка на знакомства",
+    "price": 0
+  }
+]
+
+Оформим бесплатную подписку
+{
+  "id": 1,
+  "login": "user",
+  "subscriptionType": {
+    "name": "Dating",
+    "description": "Подписка на знакомства",
+    "price": 0
+  },
+  "startDate": "2025-02-25",
+  "endDate": "2026-02-25",
+  "nextPaymentDate": null
+}
+
+Оформим платную подписку
+{
+  "id": 2,
+  "login": "user",
+  "subscriptionType": {
+    "name": "Music",
+    "description": "Подписка на музыку",
+    "price": 250
+  },
+  "startDate": "2025-02-25",
+  "endDate": "2026-02-25",
+  "nextPaymentDate": "2025-03-25"
+}
+
+Просмотрим активные подписки аккаунта
+[
+  {
+    "id": 1,
+    "login": "user",
+    "subscriptionType": {
+      "name": "Dating",
+      "description": "Подписка на знакомства",
+      "price": 0
+    },
+    "startDate": "2025-02-25",
+    "endDate": "2026-02-25",
+    "nextPaymentDate": null
+  },
+  {
+    "id": 2,
+    "login": "user",
+    "subscriptionType": {
+      "name": "Music",
+      "description": "Подписка на музыку",
+      "price": 250
+    },
+    "startDate": "2025-02-25",
+    "endDate": "2026-02-25",
+    "nextPaymentDate": "2025-03-25"
+  }
+]
+
+Отменим платную подписку
+Просмотрим активные подписки аккаунта
+[
+  {
+    "id": 1,
+    "login": "user",
+    "subscriptionType": {
+      "name": "Dating",
+      "description": "Подписка на знакомства",
+      "price": 0
+    },
+    "startDate": "2025-02-25",
+    "endDate": "2026-02-25",
+    "nextPaymentDate": null
+  },
+  {
+    "id": 2,
+    "login": "user",
+    "subscriptionType": {
+      "name": "Music",
+      "description": "Подписка на музыку",
+      "price": 250
+    },
+    "startDate": "2025-02-25",
+    "endDate": "2025-03-25",
+    "nextPaymentDate": null
+  }
+]
+
+-----------ТЕСТИРОВАНИЕ УПРАВЛЕНИЯ ПРОФИЛЕМ-----------
+Посмотрим все профили
+[
+  {
+    "id": 1,
+    "login": "admin",
+    "shortDescription": "my status",
+    "homeTown": "Саратов",
+    "knownLanguages": [
+      "Русский"
+    ],
+    "maritalStatus": "DATING",
+    "familyLogins": [
+      "test"
+    ]
+  },
+  {
+    "id": 2,
+    "login": "test",
+    "shortDescription": "test",
+    "homeTown": "Саратов",
+    "knownLanguages": [],
+    "maritalStatus": "MARRIED",
+    "familyLogins": [
+      "admin"
+    ]
+  },
+  {
+    "id": 3,
+    "login": "user",
+    "shortDescription": null,
+    "homeTown": null,
+    "knownLanguages": [],
+    "maritalStatus": null,
+    "familyLogins": []
+  }
+]
+
+Посмотрим профиль пользователя
+{
+  "id": 3,
+  "login": "user",
+  "shortDescription": null,
+  "homeTown": null,
+  "knownLanguages": [],
+  "maritalStatus": null,
+  "familyLogins": []
+}
+
+Получим список языков
+[
+  {
+    "name": "Русский"
+  },
+  {
+    "name": "Английский"
+  }
+]
+
+Установим информацию о профиле и добавим пользователя admin в семью
+
+Посмотрим все профили
+[
+  {
+    "id": 1,
+    "login": "admin",
+    "shortDescription": "my status",
+    "homeTown": "Саратов",
+    "knownLanguages": [
+      "Русский"
+    ],
+    "maritalStatus": "DATING",
+    "familyLogins": [
+      "test",
+      "user"
+    ]
+  },
+  {
+    "id": 2,
+    "login": "test",
+    "shortDescription": "test",
+    "homeTown": "Саратов",
+    "knownLanguages": [],
+    "maritalStatus": "MARRIED",
+    "familyLogins": [
+      "admin"
+    ]
+  },
+  {
+    "id": 3,
+    "login": "user",
+    "shortDescription": "updated",
+    "homeTown": null,
+    "knownLanguages": [
+      "Русский"
+    ],
+    "maritalStatus": null,
+    "familyLogins": [
+      "admin"
+    ]
+  }
+]
+
+Посмотрим персональные данные пользователя
+{
+  "login": "user",
+  "name": "name",
+  "surname": "surname",
+  "birthDate": "2000-01-01",
+  "sex": "MALE"
+}
+
+Отправим запрос на изменение имени
+
+Админом получим все запросы на изменение персональных данных
+[
+  {
+    "id": 1,
+    "accountId": {
+      "login": "user",
+      "name": "name",
+      "surname": "surname",
+      "birthDate": "2000-01-01",
+      "sex": "MALE"
+    },
+    "requestedChanges": {
+      "name": "newName",
+      "surname": "surname"
+    }
+  }
+]
+
+Одобрим изменение
+
+Посмотрим профиль пользователя
+{
+  "id": 3,
+  "login": "user",
+  "shortDescription": "updated",
+  "homeTown": null,
+  "knownLanguages": [
+    "Русский"
+  ],
+  "maritalStatus": null,
+  "familyLogins": [
+    "admin"
+  ]
+}
+
+Посмотрим персональные данные пользователя
+{
+  "login": "user",
+  "name": "newName",
+  "surname": "surname",
+  "birthDate": "2000-01-01",
+  "sex": "MALE"
+}
