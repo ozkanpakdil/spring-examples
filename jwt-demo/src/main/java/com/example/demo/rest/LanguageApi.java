@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@Tag(name = "Language Api", description = "Языки")
+@Tag(name = "Language Api", description = "language")
 public interface LanguageApi {
     @GetMapping("/languages")
     ResponseEntity<List<LanguageDto>> getAll();

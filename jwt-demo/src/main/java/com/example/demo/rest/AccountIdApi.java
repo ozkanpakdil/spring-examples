@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-@Tag(name = "AccountId Api", description = "Аккаунты")
+@Tag(name = "AccountId Api", description = "accounts")
 public interface AccountIdApi {
     @GetMapping("/accounts")
     ResponseEntity<AccountIdDto> get(@RequestHeader("Authorization") String token);

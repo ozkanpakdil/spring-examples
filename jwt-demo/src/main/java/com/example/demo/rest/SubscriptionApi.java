@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
 
-@Tag(name = "Subscription Api", description = "Подписки")
+@Tag(name = "Subscription Api", description = "subscription")
 public interface SubscriptionApi {
     @GetMapping("/subscriptions/{id}")
     ResponseEntity<SubscriptionResponseDto> get(@PathVariable("id") Long id,

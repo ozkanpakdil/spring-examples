@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
 
-@Tag(name = "Profile Api", description = "Профили")
+@Tag(name = "Profile Api", description = "profile")
 public interface ProfileApi {
     @GetMapping("/profiles")
     ResponseEntity<List<ProfileResponseDto>> getAll();

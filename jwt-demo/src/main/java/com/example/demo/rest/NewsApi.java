@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
 
-@Tag(name = "News Api", description = "Новости")
+@Tag(name = "News Api", description = "news")
 public interface NewsApi {
     @GetMapping("/news/{id}")
     ResponseEntity<NewsResponseDto> get(@PathVariable("id") Long id);

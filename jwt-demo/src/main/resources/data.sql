@@ -1,4 +1,4 @@
-/*INSERT INTO towns (name)
+INSERT INTO towns (name)
 VALUES ('Саратов');
 
 INSERT INTO languages (name)
@@ -25,4 +25,4 @@ INSERT INTO profile_known_languages (language_id, profile_id)
 VALUES (1, 1);
 
 INSERT INTO news (profile_id, text)
-VALUES (1, 'Тестовая новость');*/
+VALUES (1, 'Тестовая новость');

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@Tag(name = "Town Api", description = "Города")
+@Tag(name = "Town Api", description = "towns")
 public interface TownApi {
     @GetMapping("/towns")
     ResponseEntity<List<TownDto>> getAll();

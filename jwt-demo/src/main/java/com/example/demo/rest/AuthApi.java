@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@Tag(name = "Auth Api", description = "Аутентификация")
+@Tag(name = "Auth Api", description = "authentication")
 public interface AuthApi {
     @PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE + "; charset=utf-8")
     ResponseEntity<RegisteredAccountIdDto> register(@RequestBody RegisterDto registerDto);

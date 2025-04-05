@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-@Tag(name = "Photo Api", description = "Фото")
+@Tag(name = "Photo Api", description = "photo")
 public interface PhotoApi {
     @GetMapping("/photo/{path}")
     ResponseEntity<Resource> get(@PathVariable("path") String path);

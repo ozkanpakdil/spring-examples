@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 
-@Tag(name = "Admin Api", description = "Админка")
+@Tag(name = "Admin Api", description = "admin")
 public interface AdminApi {
     @GetMapping("/admin/subscriptions")
     ResponseEntity<List<SubscriptionResponseDto>> getAllSubscriptions();

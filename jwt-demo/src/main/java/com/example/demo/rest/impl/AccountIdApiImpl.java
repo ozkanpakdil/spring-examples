@@ -26,7 +26,7 @@ public class AccountIdApiImpl implements AccountIdApi {
     @Override
     public ResponseEntity<String> requestChange(AccountIdChangeRequestDto accountIdChangeRequestDto, String token) {
         accountIdService.requestChangeAccountId(token, accountIdChangeRequestDto);
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body("Запрос на изменение данных аккаунта отправлен");
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body("Request to change account details sent");
     }
 
     @Override
