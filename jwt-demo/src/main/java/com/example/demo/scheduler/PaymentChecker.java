@@ -8,14 +8,17 @@ import com.example.demo.model.SubscriptionType;
 import com.example.demo.repository.SubscriptionRepository;
 import com.example.demo.services.BankDetailsService;
 import com.example.demo.services.SubscriptionService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Component
+@Slf4j
 public class PaymentChecker {
     private final SubscriptionRepository subscriptionRepository;
     private final BankDetailsService bankDetailsService;
@@ -30,8 +33,10 @@ public class PaymentChecker {
         this.subscriptionService = subscriptionService;
     }
 
-    @Scheduled(cron = "0 0 * * * ?")
+    @Scheduled(cron = "0 * * * * ?")
+    @Transactional
     public void checkPayment() {
+        log.info("Checking payments for subscriptions");
         final List<Subscription> subscriptions = subscriptionRepository.findAllByNextPaymentDate(LocalDate.now());
 
         subscriptions.forEach(subscription -> {
