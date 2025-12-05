@@ -1,0 +1,19 @@
+spring:
+  main:
+    web-application-type: none
+
+feign:
+  server:
+    url: https://localhost:8443
+
+mtls:
+  keyStore: file:../certs/output/client-keystore.p12
+  keyStorePassword: changeit
+  keyStoreType: PKCS12
+  trustStore: file:../certs/output/client-truststore.p12
+  trustStorePassword: changeit
+  trustStoreType: PKCS12
+
+logging:
+  level:
+    dev.demo.client: INFO
